@@ -46,6 +46,11 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(milliseconds: 10), () {
+      setState(() {
+        bottomColor = Colors.blue;
+      });
+    });
     return Scaffold(
         body: Stack(
           children: [

@@ -1,4 +1,4 @@
-# android_dev
+# HaiQ
 
 My very first flutter application.
 Learning flutter by creating a calming haiku reader application.

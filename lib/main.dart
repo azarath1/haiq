@@ -26,10 +26,14 @@ class AnimatedGradient extends StatefulWidget {
 }
 class _AnimatedGradientState extends State<AnimatedGradient> {
   List<Color> colorList = [
-    Colors.amber,
-    Colors.cyanAccent,
-    Colors.lightGreen,
-    Colors.red
+    Color.fromRGBO(242, 61, 93, 1),
+    Color.fromRGBO(140, 61, 93, 1),
+    Color.fromRGBO(114, 61, 93, 1),
+    Color.fromRGBO(66, 61, 93, 1),
+    Color.fromRGBO(0, 61, 93, 1),
+    Color.fromRGBO(66, 61, 93, 1),
+    Color.fromRGBO(114, 61, 93, 1),
+    Color.fromRGBO(140, 61, 93, 1),
   ];
   List<Alignment> alignmentList = [
     Alignment.bottomLeft,
@@ -38,8 +42,8 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
     Alignment.topLeft,
   ];
   int index = 0;
-  Color bottomColor = Colors.pinkAccent;
-  Color topColor = Colors.orange;
+  Color bottomColor = Colors.deepPurpleAccent;
+  Color topColor = Colors.blue;
   Alignment begin = Alignment.bottomLeft;
   Alignment end = Alignment.topRight;
 
@@ -48,7 +52,7 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(milliseconds: 10), () {
       setState(() {
-        bottomColor = Colors.blue;
+        bottomColor = Colors.deepPurple;
       });
     });
     return Scaffold(
@@ -72,16 +76,6 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
                   gradient: LinearGradient(
                       begin: begin, end: end, colors: [bottomColor, topColor])),
             ),
-            Positioned.fill(
-              child: IconButton(
-                icon: Icon(Icons.play_arrow),
-                onPressed: () {
-                  setState(() {
-                    bottomColor = Colors.red;
-                  });
-                },
-              ),
-            )
           ],
         ));
   }

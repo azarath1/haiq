@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,14 +27,14 @@ class AnimatedGradient extends StatefulWidget {
 }
 class _AnimatedGradientState extends State<AnimatedGradient> {
   List<Color> colorList = [
-    Color.fromRGBO(242, 61, 93, 1),
-    Color.fromRGBO(140, 61, 93, 1),
-    Color.fromRGBO(114, 61, 93, 1),
-    Color.fromRGBO(66, 61, 93, 1),
-    Color.fromRGBO(0, 61, 93, 1),
-    Color.fromRGBO(66, 61, 93, 1),
-    Color.fromRGBO(114, 61, 93, 1),
-    Color.fromRGBO(140, 61, 93, 1),
+    Color.fromRGBO(163, 255, 166, 1),
+    Color.fromRGBO(138, 236, 159, 1),
+    Color.fromRGBO(112, 217, 151, 1),
+    Color.fromRGBO(87, 198, 144, 1),
+    Color.fromRGBO(61, 179, 136, 1),
+    Color.fromRGBO(60, 140, 136, 1),
+    Color.fromRGBO(100, 200, 150, 1),
+    Color.fromRGBO(120, 255, 190, 1),
   ];
   List<Alignment> alignmentList = [
     Alignment.bottomLeft,
@@ -42,8 +43,8 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
     Alignment.topLeft,
   ];
   int index = 0;
-  Color bottomColor = Colors.deepPurpleAccent;
-  Color topColor = Colors.blue;
+  Color bottomColor = Colors.greenAccent;
+  Color topColor = Colors.green;
   Alignment begin = Alignment.bottomLeft;
   Alignment end = Alignment.topRight;
 
@@ -52,7 +53,7 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(milliseconds: 10), () {
       setState(() {
-        bottomColor = Colors.deepPurple;
+        bottomColor = Colors.lightGreen;
       });
     });
     return Scaffold(
@@ -76,6 +77,17 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
                   gradient: LinearGradient(
                       begin: begin, end: end, colors: [bottomColor, topColor])),
             ),
+            Center(
+              child: Text('On a withered branch \nA crow has alighted\nNightfall in autumn.',
+                style: GoogleFonts.pottaOne(
+                  textStyle: const TextStyle(
+                      color: Colors.black,
+                      letterSpacing: .5,
+                      fontSize: 25
+                  ),
+                ),
+              ),
+            )
           ],
         ));
   }
